@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .clip {
+            height: 100vh;
+            background: url(./Affresco.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            transition: 0.4s ease-in-out;
+            
+        }
+
+        .hoverSpot:hover + .clip {
+            clip-path: polygon(50% 10%, 60% 50%, 50% 90%, 40% 50%);
+        }
+
+
+        .hoverSpot {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            top: 2rem;
+            right: 2rem;
+            background-color: black;
+            width: fit-content;
+            height: fit-content;
+            z-index: 1;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="hoverSpot">Hover Me</div>
+    <div class="clip">
+    </div>
+</body>
+</html>
